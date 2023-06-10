@@ -1,15 +1,23 @@
-public class Main {
-    public static void main(String[] args) {
-        Clothes[] clothes = {
-                new TShirt(ClothesSize.XXS, 15.99, "белый"),
-                new Pants(ClothesSize.M, 29.99, "черный"),
-                new Skirt(ClothesSize.S, 25.50, "красный"),
-                new Tie(ClothesSize.L, 10.49, "синий")
-        };
+enum ClothesSize {
+    XXS(32), XS(34), S(36), M(38), L(40);
 
-        Atelier atelier = new Atelier();
-        atelier.dressWoman(clothes);
-        atelier.dressMan(clothes);
+    private final int euroSize;
+
+    ClothesSize(int euroSize) {
+        this.euroSize = euroSize;
+    }
+
+    public String getDescription() {
+        if (this == XXS) {
+            return "Детский размер";
+        } else {
+            return "Взрослый размер";
+        }
+    }
+
+    public int getEuroSize() {
+
+        return euroSize;
     }
 }
 
@@ -33,20 +41,24 @@ abstract class Clothes {
     }
 
     public ClothesSize getSize() {
+
         return size;
     }
 
     public double getCost() {
+
         return cost;
     }
 
     public String getColor() {
+
         return color;
     }
 }
 
 class TShirt extends Clothes implements MaleClothes, FemaleClothes {
     TShirt(ClothesSize size, double cost, String color) {
+
         super(size, cost, color);
     }
 
@@ -122,5 +134,19 @@ class Atelier {
                 ((MaleClothes) c).dressMan();
             }
         }
+    }
+}
+public class Main {
+    public static void main(String[] args) {
+        Clothes[] clothes = {
+                new TShirt(ClothesSize.XXS, 15.99, "белый"),
+                new Pants(ClothesSize.M, 29.99, "черный"),
+                new Skirt(ClothesSize.S, 25.50, "красный"),
+                new Tie(ClothesSize.L, 10.49, "синий")
+        };
+
+        Atelier atelier = new Atelier();
+        atelier.dressWoman(clothes);
+        atelier.dressMan(clothes);
     }
 }
