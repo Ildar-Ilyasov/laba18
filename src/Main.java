@@ -105,9 +105,9 @@ class Atelier {
     }
     public void dressMan(Clothes[] clothes) {
         System.out.println("Мужская одежда:");
-        for (Clothes c : clothes) {
-            if (c instanceof MaleClothes) {
-                ((MaleClothes) c).dressMan();
+        for (Clothes a : clothes) {
+            if (a instanceof MaleClothes) {
+                ((MaleClothes) a).dressMan();
             }
         }
     }
