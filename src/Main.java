@@ -42,6 +42,7 @@ abstract class Clothes {
 }
 class TShirt extends Clothes implements MaleClothes, FemaleClothes {
     TShirt(ClothesSize size, double cost, String color) {
+
         super(size, cost, color);
     }
     @Override
@@ -57,6 +58,7 @@ class TShirt extends Clothes implements MaleClothes, FemaleClothes {
 }
 class Pants extends Clothes implements MaleClothes, FemaleClothes {
     Pants(ClothesSize size, double cost, String color) {
+
         super(size, cost, color);
     }
     @Override
@@ -72,6 +74,7 @@ class Pants extends Clothes implements MaleClothes, FemaleClothes {
 }
 class Skirt extends Clothes implements FemaleClothes {
     Skirt(ClothesSize size, double cost, String color) {
+
         super(size, cost, color);
     }
     @Override
@@ -82,6 +85,7 @@ class Skirt extends Clothes implements FemaleClothes {
 }
 class Tie extends Clothes implements MaleClothes {
     Tie(ClothesSize size, double cost, String color) {
+
         super(size, cost, color);
     }
     @Override
