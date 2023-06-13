@@ -93,9 +93,9 @@ class Tie extends Clothes implements MaleClothes {
 class Atelier {
     public void dressWoman(Clothes[] clothes) {
         System.out.println("Женская одежда:");
-        for (Clothes c : clothes) {
-            if (c instanceof FemaleClothes) {
-                ((FemaleClothes) c).dressWoman();
+        for (Clothes a : clothes) {
+            if (a instanceof FemaleClothes) {
+                ((FemaleClothes) a).dressWoman();
             }
         }
     }
